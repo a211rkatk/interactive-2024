@@ -5,12 +5,6 @@
     "m_Properties": [
         {
             "m_Id": "d1a1d3d933b14e748489a569fdefcb51"
-        },
-        {
-            "m_Id": "42c6d1b8db274d2cabac07467f9a4d3d"
-        },
-        {
-            "m_Id": "c9d6123791094495959584b94157f2a3"
         }
     ],
     "m_Keywords": [],
@@ -1368,34 +1362,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "42c6d1b8db274d2cabac07467f9a4d3d",
-    "m_Guid": {
-        "m_GuidSerialized": "5955d51b-21af-4e23-b596-5914f5541034"
-    },
-    "m_Name": "grain",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "grain",
-    "m_DefaultReferenceName": "_grain",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.009999999776482582,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector2Node",
     "m_ObjectId": "4776a43d1f454c9281c51aeefda682e1",
@@ -2499,12 +2465,6 @@
     "m_ChildObjectList": [
         {
             "m_Id": "d1a1d3d933b14e748489a569fdefcb51"
-        },
-        {
-            "m_Id": "42c6d1b8db274d2cabac07467f9a4d3d"
-        },
-        {
-            "m_Id": "c9d6123791094495959584b94157f2a3"
         }
     ]
 }
@@ -2600,34 +2560,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "c9d6123791094495959584b94157f2a3",
-    "m_Guid": {
-        "m_GuidSerialized": "66a83376-0257-4943-a192-be37ad42efa4"
-    },
-    "m_Name": "length",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "length",
-    "m_DefaultReferenceName": "_length",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 15.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
 }
 
 {
