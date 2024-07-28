@@ -56,12 +56,10 @@ public class VideoTree : MonoBehaviour
     bool GetNextClip()
     {
         VideoClip[] _clips = Resources.LoadAll<VideoClip>(_path);
-        if (null != _clips && _clips.Length > 0)
-        {
-            _currentClip = _clips[^1];
-            return true;
-        }
-        return false;
+        if (null == _clips && _clips.Length == 0) return false;
+
+        _currentClip = _clips[^1];
+        return true;
     }
 
     void Traverse(bool AB)
@@ -82,8 +80,7 @@ public class VideoTree : MonoBehaviour
 
     bool Branch(string next)
     {
-        Object[] objects = Resources.LoadAll(_path + "/" + next);
-        if (objects == null || objects.Length == 0) return false;
+        if (FolderExistsUnderResources(_path + "/" + next)) return false;
 
         _path += "/" + next;
         return true;
@@ -132,4 +129,12 @@ public class VideoTree : MonoBehaviour
         catch { return ""; }
     }
     */
+
+    bool FolderExistsUnderResources(string path)
+    {
+        TextAsset[] texts = Resources.LoadAll<TextAsset>(path);
+        
+        if (texts == null || texts.Length == 0) return false;
+        else return true;
+    }
 }

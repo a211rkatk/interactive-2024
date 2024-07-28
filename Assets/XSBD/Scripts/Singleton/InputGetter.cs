@@ -15,13 +15,16 @@ public class InputGetter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Timer._choice)
         {
-            _tree.Proceed(true);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _tree.Proceed(false);
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                _tree.Proceed(true);
+            }
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                _tree.Proceed(false);
+            }
         }
     }
 }

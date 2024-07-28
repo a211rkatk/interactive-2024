@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb20f1aca7423e4b929f1efccee914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: 1
+  _loadScene: 0
   _name: Tutorial
   _directory: Assets/Resources/Tutorial/AB/A/A/AB
   _generate: 0
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 909000605}
   - component: {fileID: 909000604}
   - component: {fileID: 909000606}
+  - component: {fileID: 909000607}
   m_Layer: 0
   m_Name: VideoTree
   m_TagString: Untagged
@@ -337,6 +338,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tree: {fileID: 909000604}
+--- !u!114 &909000607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909000603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26023549b150164499364090803cb52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slowDownTime: 2
+  _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
+  _maxAbberation: 0.01
+  _bar: {fileID: 1621402176}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +828,6 @@ GameObject:
   - component: {fileID: 1532992096}
   - component: {fileID: 1532992095}
   - component: {fileID: 1532992094}
-  - component: {fileID: 1532992097}
   m_Layer: 0
   m_Name: Chrabb
   m_TagString: Untagged
@@ -884,22 +900,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1532992097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532992092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26023549b150164499364090803cb52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slowDownTime: 2
-  _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
-  _maxAbberation: 0.01
-  _bar: {fileID: 1621402176}
 --- !u!1 &1621402174
 GameObject:
   m_ObjectHideFlags: 0

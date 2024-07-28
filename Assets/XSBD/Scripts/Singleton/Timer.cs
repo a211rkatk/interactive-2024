@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     [SerializeField] Image _bar;
 
     public static Timer _instance;
+    public static bool _choice = false;
     const float _inverseHalfPI = 0.63661977236f;
     float _startSlowdown; //Measured from end of the clip
     float _inverseStartSlowdown;
@@ -23,7 +24,6 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         ApplySingleton();
-        NewVideo();
     }
 
     // Start is called before the first frame update
@@ -65,11 +65,15 @@ public class Timer : MonoBehaviour
 
     void Countdown(float remaining)
     {
-        if (remaining < 1)
+        if (_choice)
         {
             SetVideoSpeed(remaining);
             SetAbberation(remaining);
             SetBarFill(remaining);
+        }
+        else if (remaining < 1)
+        {
+            _choice = true;
         }
     }
 
@@ -86,7 +90,8 @@ public class Timer : MonoBehaviour
     public static void NewVideo()
     {
         _instance.SetVideoSpeed(1.0f);
-        _instance.SetAbberation(0.0f);
+        _instance.SetAbberation(1.0f);
         _instance.SetBarFill(1.0f);
+        _choice = false;
     }
 }

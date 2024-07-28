@@ -39,7 +39,7 @@ public class VideoPlayerManager : MonoBehaviour
 
     public static float GetRemaining()
     {
-        return (float)(_instance._player.clip.length - _instance._player.time);
+        return (float)(_instance._player.clip.length - _instance._player.clockTime);
     }
 
     public static void SetPlaySpeed(float speed)
