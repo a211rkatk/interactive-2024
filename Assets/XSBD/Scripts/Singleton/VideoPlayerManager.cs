@@ -12,7 +12,11 @@ public class VideoPlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null) _instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+            print(name);
+        }
         else
         {
             Debug.LogError("Error: Multiple instances of VideoPlayerManager has been spotted!");
@@ -32,25 +36,35 @@ public class VideoPlayerManager : MonoBehaviour
         
     }
 
+    static VideoPlayerManager Instance()
+    {
+        if (_instance != null) return _instance;
+        else
+        {
+            Debug.LogError("NRE: no instance of videoplayermanager has been created");
+            return null;
+        }
+    }
+
     public static VideoPlayer GetPlayer()
     {
-        return _instance._player;
+        return Instance()._player;
     }
 
     public static float GetRemaining()
     {
-        return (float)(_instance._player.clip.length - _instance._player.clockTime);
+        return (float)(Instance()._player.clip.length - Instance()._player.clockTime);
     }
 
     public static void SetPlaySpeed(float speed)
     {
-        _instance._player.playbackSpeed = speed;
-        _instance._audioSource.pitch = speed;
+        Instance()._player.playbackSpeed = speed;
+        Instance()._audioSource.pitch = speed;
     }
 
     public static void SetVideo(VideoClip clip)
     {
-        _instance._player.clip = clip;
+        Instance()._player.clip = clip;
 
         Timer.NewVideo();
     }

@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadScene: 0
-  _name: Tutorial
-  _directory: Assets/Resources/Tutorial/AB/A/A/AB
+  _name: MainRoute
+  _directory: Assets/Resources/Tutorial/AB/B/AB
   _generate: 0
 --- !u!4 &92293530
 Transform:
@@ -307,6 +307,7 @@ MonoBehaviour:
   _beginAt: Tutorial
   _key1: 97
   _key2: 98
+  _path: 
   _currentClip: {fileID: 0}
   _branchA: 0
   _branchB: 0

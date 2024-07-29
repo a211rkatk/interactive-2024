@@ -10,7 +10,7 @@ public class VideoTree : MonoBehaviour
     [SerializeField] KeyCode _key1;
     [SerializeField] KeyCode _key2;
 
-    string _path;
+    [SerializeField] string _path;
     [SerializeField] VideoClip _currentClip;
 
     [Space(30f)]
@@ -53,15 +53,6 @@ public class VideoTree : MonoBehaviour
         else DoAsTextSays();
     }
 
-    bool GetNextClip()
-    {
-        VideoClip[] _clips = Resources.LoadAll<VideoClip>(_path);
-        if (null == _clips && _clips.Length == 0) return false;
-
-        _currentClip = _clips[^1];
-        return true;
-    }
-
     void Traverse(bool AB)
     {
         if (!Branch("AB"))
@@ -78,9 +69,18 @@ public class VideoTree : MonoBehaviour
         }
     }
 
+    bool GetNextClip()
+    {
+        VideoClip[] _clips = Resources.LoadAll<VideoClip>(_path);
+        if (null == _clips || _clips.Length == 0) return false;
+
+        _currentClip = _clips[^1];
+        return true;
+    }
+
     bool Branch(string next)
     {
-        if (FolderExistsUnderResources(_path + "/" + next)) return false;
+        if (!FolderExistsUnderResources(_path + "/" + next)) return false;
 
         _path += "/" + next;
         return true;
@@ -88,8 +88,7 @@ public class VideoTree : MonoBehaviour
 
     bool RetraverseBranch()
     {
-        Object[] objects = Resources.LoadAll(ParentDirectory(_path) + "/Y");
-        if(objects == null || objects.Length == 0) return false;
+        if(!FolderExistsUnderResources(ParentDirectory(_path) + "/Y")) return false;
 
         _path = ParentDirectory(_path) + "/Y";
         return true;
@@ -120,6 +119,14 @@ public class VideoTree : MonoBehaviour
         return path.Substring(0, path.LastIndexOf("/"));
     }
 
+    bool FolderExistsUnderResources(string path)
+    {
+        Object[] objects = Resources.LoadAll(path);
+        
+        if (objects == null || objects.Length == 0) return false;
+        else return true;
+    }
+
     /*
     string GetFileOfExtensionAtPath(string extension) // returns file name without extension at _path.
     {
@@ -129,12 +136,4 @@ public class VideoTree : MonoBehaviour
         catch { return ""; }
     }
     */
-
-    bool FolderExistsUnderResources(string path)
-    {
-        TextAsset[] texts = Resources.LoadAll<TextAsset>(path);
-        
-        if (texts == null || texts.Length == 0) return false;
-        else return true;
-    }
 }
