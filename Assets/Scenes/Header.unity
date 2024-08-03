@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 92293530}
   - component: {fileID: 92293529}
   m_Layer: 0
-  m_Name: Util
+  m_Name: Instruction File Writer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb20f1aca7423e4b929f1efccee914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: 0
-  _name: MainRoute
-  _directory: Assets/Resources/Tutorial/AB/B/AB
+  _loadScene: 1
+  _destinationName: Main
+  _instructionDirectory: Assets/Resources/Teaser/AB
   _generate: 0
 --- !u!4 &92293530
 Transform:
@@ -304,11 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebd754fae69e444e81d52e1d900c386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beginAt: Tutorial
-  _key1: 97
-  _key2: 98
-  _path: 
-  _currentClip: {fileID: 0}
+  _beginAt: Teaser
+  _resetRandomProcessionCountOnStart: 0
   _branchA: 0
   _branchB: 0
 --- !u!4 &909000605
@@ -339,6 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tree: {fileID: 909000604}
+  _keyA: 97
+  _keyB: 98
 --- !u!114 &909000607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +354,9 @@ MonoBehaviour:
   _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
   _maxAbberation: 0.01
   _bar: {fileID: 1621402176}
+  _fadeTime: 0
+  _minimumSpeed: 0
+  _autoTraverseThreshold: 0.05
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +706,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []

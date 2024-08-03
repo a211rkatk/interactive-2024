@@ -12,28 +12,7 @@ public class VideoPlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            print(name);
-        }
-        else
-        {
-            Debug.LogError("Error: Multiple instances of VideoPlayerManager has been spotted!");
-            Destroy(this);
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _instance = this;
     }
 
     static VideoPlayerManager Instance()

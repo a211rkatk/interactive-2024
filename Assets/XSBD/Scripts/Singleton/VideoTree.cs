@@ -7,15 +7,16 @@ public class VideoTree : MonoBehaviour
 {
     [Tooltip("Starts with the video stored in the folder directly under Resources which has this name\nResources 폴더 바로 아래 있는 폴더들 중 이 이름을 가진 폴더에서 시작")]
     [SerializeField] string _beginAt = "";
-    [SerializeField] KeyCode _key1;
-    [SerializeField] KeyCode _key2;
-
-    [SerializeField] string _path;
-    [SerializeField] VideoClip _currentClip;
+    [SerializeField] bool _resetRandomProcessionCountOnStart = false;
 
     [Space(30f)]
+    //Debug buttons
     [SerializeField] bool _branchA;
     [SerializeField] bool _branchB;
+
+    VideoClip _currentClip;
+    string _path;
+    static uint _randomProcessionCount = 0;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class VideoTree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (_resetRandomProcessionCountOnStart) _randomProcessionCount = 0;
         StartFromNewRoot(_beginAt);
     }
 
@@ -43,6 +45,12 @@ public class VideoTree : MonoBehaviour
         }
     }
 
+    public void RandomProceed()
+    {
+        ++_randomProcessionCount;
+        Proceed(Random.value > 0.5f);
+    }
+
     public void Proceed(bool AB)
     {
         //traverse to folder first
@@ -51,6 +59,12 @@ public class VideoTree : MonoBehaviour
         //if there is a video, play that, and if not, get instructions.
         if (GetNextClip()) VideoPlayerManager.SetVideo(_currentClip);
         else DoAsTextSays();
+    }
+
+    void HandleDeadEndException(string message = "Tree met a dead end. Reloading Scene.")
+    {
+        Debug.LogError(message);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Traverse(bool AB)
@@ -62,8 +76,7 @@ public class VideoTree : MonoBehaviour
             {
                 if (!RetraverseBranch())
                 {
-                    Debug.LogError("Tree met a dead end. Reloading Scene.");
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    HandleDeadEndException();
                 }
             }
         }
@@ -111,12 +124,16 @@ public class VideoTree : MonoBehaviour
         Debug.Log("Root set to: Resources/" + (_path = newRoot));
 
         if (GetNextClip()) VideoPlayerManager.SetVideo(_currentClip);
-        else Debug.LogError("Couldn't get new sequence");
+        else
+        {
+            HandleDeadEndException("New root could not be found under Assets/Resources! New Root: " + newRoot);
+        }
     }
 
     static string ParentDirectory(string path)
     {
-        return path.Substring(0, path.LastIndexOf("/"));
+        int lastIndexOfSlash = path.LastIndexOf("/");
+        return path.Substring(0, (lastIndexOfSlash == -1 ? 0 : lastIndexOfSlash));
     }
 
     bool FolderExistsUnderResources(string path)

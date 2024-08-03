@@ -12,18 +12,26 @@ public class Timer : MonoBehaviour
     [SerializeField] float _maxAbberation;
     [Space(10f)]
     [SerializeField] Image _bar;
+    [SerializeField] float _fadeTime;
+    [Space(10f)]
+    [SerializeField] float _minimumSpeed;
+    [SerializeField] float _autoTraverseThreshold;
 
     public static Timer _instance;
     public static bool _choice = false;
+    public static bool _autoChoice = false;
+
     const float _inverseHalfPI = 0.63661977236f;
     float _startSlowdown; //Measured from end of the clip
     float _inverseStartSlowdown;
+    float _invOneMinusATT;
+    bool _notLoop;
 
     public static bool _timeForSelection;
 
     private void Awake()
     {
-        ApplySingleton();
+        _instance = this;
     }
 
     // Start is called before the first frame update
@@ -31,12 +39,15 @@ public class Timer : MonoBehaviour
     {
         _startSlowdown = _slowDownTime * _inverseHalfPI;
         _inverseStartSlowdown = 1f / _startSlowdown;
+        _invOneMinusATT = 1f / (1 - _autoTraverseThreshold);
+
+        _notLoop = !VideoPlayerManager.GetPlayer().isLooping;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Countdown(GetRemaining());
+        if(_notLoop) Countdown(GetRemaining());
     }
 
     float GetRemaining()
@@ -50,7 +61,8 @@ public class Timer : MonoBehaviour
     void SetVideoSpeed(float remainRate)
     {
         float x = 1 - remainRate;
-        VideoPlayerManager.SetPlaySpeed(1 - x * x);
+        x = 1 - x * x;
+        VideoPlayerManager.SetPlaySpeed((x < _minimumSpeed ? _minimumSpeed : x));
     }
 
     void SetAbberation(float remainRate)
@@ -60,7 +72,7 @@ public class Timer : MonoBehaviour
 
     void SetBarFill(float remainRate)
     {
-        _bar.fillAmount = remainRate;
+        _bar.fillAmount = (remainRate - _autoTraverseThreshold) * _invOneMinusATT;
     }
 
     void Countdown(float remaining)
@@ -70,20 +82,12 @@ public class Timer : MonoBehaviour
             SetVideoSpeed(remaining);
             SetAbberation(remaining);
             SetBarFill(remaining);
+            
+            if(remaining < _autoTraverseThreshold) _autoChoice = true;
         }
         else if (remaining < 1)
         {
             _choice = true;
-        }
-    }
-
-    void ApplySingleton()
-    {
-        if (_instance == null) _instance = this;
-        else
-        {
-            Debug.LogError("Error: Multiple instances of Timer has been spotted!");
-            Destroy(this);
         }
     }
 
@@ -93,5 +97,7 @@ public class Timer : MonoBehaviour
         _instance.SetAbberation(1.0f);
         _instance.SetBarFill(1.0f);
         _choice = false;
+        _autoChoice = false;
+        _instance._bar.CrossFadeAlpha(0, _instance._fadeTime, false);
     }
 }
