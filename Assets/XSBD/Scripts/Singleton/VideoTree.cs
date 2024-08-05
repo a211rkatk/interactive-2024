@@ -47,7 +47,7 @@ public class VideoTree : MonoBehaviour
 
     public void RandomProceed()
     {
-        ++_randomProcessionCount;
+        if (++_randomProcessionCount > 2) SceneManager.LoadScene("Header");
         Proceed(Random.value > 0.5f);
     }
 

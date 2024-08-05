@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb20f1aca7423e4b929f1efccee914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: 1
+  _loadScene: 0
   _destinationName: Main
-  _instructionDirectory: Assets/Resources/Teaser/AB
+  _instructionDirectory: Assets/Resources/Prologue/AB/A/Y
   _generate: 0
 --- !u!4 &92293530
 Transform:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _beginAt: Teaser
-  _resetRandomProcessionCountOnStart: 0
+  _resetRandomProcessionCountOnStart: 1
   _branchA: 0
   _branchB: 0
 --- !u!4 &909000605
