@@ -83,7 +83,7 @@ public class Timer : MonoBehaviour
         Debug.Log(_choice);
         if (_choice)
         {
-            SetVideoSpeed(remaining);
+            //SetVideoSpeed(remaining);
             SetAbberation(remaining);
             SetBarFill(remaining);
             
