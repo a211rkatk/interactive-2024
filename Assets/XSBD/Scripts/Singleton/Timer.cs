@@ -17,13 +17,13 @@ public class Timer : MonoBehaviour
     [SerializeField] float _minimumSpeed;
     [SerializeField] float _autoTraverseThreshold;
 
-    public float remaining2;
+    public float remaining2;//µð¹ö±ë¿ë
 
     public static Timer _instance;
     public static bool _choice = false;
     public static bool _autoChoice = false;
 
-    const float _inverseHalfPI = 1f;//0.63661977236f;
+    const float _inverseHalfPI = 1f;//0.63661977236f; _¿Ö?
     public float _startSlowdown; //Measured from end of the clip
     float _inverseStartSlowdown;
     float _invOneMinusATT;
@@ -40,7 +40,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         _startSlowdown = _slowDownTime * _inverseHalfPI;
-        _inverseStartSlowdown = 10f / _startSlowdown;
+        _inverseStartSlowdown = 1f / _startSlowdown;
         _invOneMinusATT = 1f / (1 - _autoTraverseThreshold);
 
         _notLoop = !VideoPlayerManager.GetPlayer().isLooping;
@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
     float GetRemaining()
     {
         float remaining = VideoPlayerManager.GetRemaining();
-        remaining2 = VideoPlayerManager.GetRemaining();
+        remaining2 = VideoPlayerManager.GetRemaining(); //µð¹ö±ë¿ë
 
         if (remaining < _startSlowdown) return remaining * _inverseStartSlowdown;
         else return 1;
@@ -75,7 +75,7 @@ public class Timer : MonoBehaviour
 
     void SetBarFill(float remainRate)
     {
-        _bar.fillAmount = (remainRate - _autoTraverseThreshold) * _invOneMinusATT;
+        _bar.fillAmount = remainRate; //(remainRate - _autoTraverseThreshold) * _invOneMinusATT;
     }
 
     void Countdown(float remaining)
