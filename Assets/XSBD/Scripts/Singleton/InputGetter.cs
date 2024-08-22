@@ -30,7 +30,9 @@ public class InputGetter : MonoBehaviour
 
             if(Timer._autoChoice)
             {
-                _tree.RandomProceed();
+                //_tree.RandomProceed();
+                //요청으로 랜덤 삭제
+                _tree.Proceed(true);
             }
         }
     }
