@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Resources/Teaser/AB/Load_Prologue.txt.meta
 guid: e7d6ad6517bf14d4da9409b9c547c887
+========
+guid: 46c5568033cae8f43ad5829ab1e8533d
+>>>>>>>> Stashed changes:Assets/Resources/Teaser/AB/Restart_At_prologue.txt.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 
