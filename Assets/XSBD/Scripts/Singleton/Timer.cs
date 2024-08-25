@@ -6,10 +6,14 @@ using UnityEngine.Video;
 
 public class Timer : MonoBehaviour
 {
+    [Space(15f)]
+    [Header("수정요소")]
     [SerializeField] float _slowDownTime;
-    [Space(10f)]
-    [SerializeField] Material _chrabb;
     [SerializeField] float _maxAbberation;
+    [Header("-----------------------------------")]
+    [Space(15f)]
+    [SerializeField] Material _chrabb;
+    
     [Space(10f)]
     [SerializeField] Image _bar;
     [SerializeField] float _fadeTime;
