@@ -351,12 +351,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slowDownTime: 2
-  _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
   _maxAbberation: 0.01
+  _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
   _bar: {fileID: 1621402176}
   _fadeTime: 0
   _minimumSpeed: 0
   _autoTraverseThreshold: 0.05
+  remaining2: 0
+  _startSlowdown: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
