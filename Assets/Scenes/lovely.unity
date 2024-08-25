@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadScene: 1
-  _destinationName: Prologue
-  _instructionDirectory: Assets/Resources/Teaser/AB
+  _destinationName: Windows
+  _instructionDirectory: Assets\Resources\Lovely\B
   _generate: 0
 --- !u!4 &92293530
 Transform:
@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebd754fae69e444e81d52e1d900c386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beginAt: Teaser
-  _resetRandomProcessionCountOnStart: 1
+  _beginAt: Prologue
+  _resetRandomProcessionCountOnStart: 0
   _branchA: 0
   _branchB: 0
 --- !u!4 &909000605
@@ -350,8 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26023549b150164499364090803cb52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowDownTime: 2
-  _maxAbberation: 0.01
+  _slowDownTime: 0
+  _maxAbberation: 0
   _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
   _bar: {fileID: 1621402176}
   _fadeTime: 0
@@ -708,7 +708,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []

@@ -351,8 +351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slowDownTime: 10
+  _maxAbberation: 0.04
   _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
-  _maxAbberation: 0.02
   _bar: {fileID: 1621402176}
   _fadeTime: 0
   _minimumSpeed: 0
