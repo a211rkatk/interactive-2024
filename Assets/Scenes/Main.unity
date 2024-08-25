@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb20f1aca7423e4b929f1efccee914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: 0
-  _destinationName: Error
-  _instructionDirectory: Assets/Resources/MainRoute/AB
+  _loadScene: 1
+  _destinationName: lovely
+  _instructionDirectory: Assets\Resources\Prologue\A\B
   _generate: 0
 --- !u!4 &92293530
 Transform:

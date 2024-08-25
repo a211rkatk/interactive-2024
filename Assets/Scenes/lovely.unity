@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebd754fae69e444e81d52e1d900c386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beginAt: Prologue
+  _beginAt: Lovely
   _resetRandomProcessionCountOnStart: 0
   _branchA: 0
   _branchB: 0
