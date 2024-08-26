@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb20f1aca7423e4b929f1efccee914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: 0
-  _destinationName: Error
-  _instructionDirectory: Assets/Resources/MainRoute/AB
+  _loadScene: 1
+  _destinationName: Startscene
+  _instructionDirectory: Assets\Resources\Window\B
   _generate: 0
 --- !u!4 &92293530
 Transform:
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26023549b150164499364090803cb52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowDownTime: 10
+  _slowDownTime: 8
   _maxAbberation: 0.02
   _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
   _bar: {fileID: 1621402176}

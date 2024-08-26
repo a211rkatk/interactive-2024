@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadScene: 1
-  _destinationName: Windows
-  _instructionDirectory: Assets\Resources\Lovely\B
+  _destinationName: Window_no
+  _instructionDirectory: Assets\Resources\Window\A
   _generate: 0
 --- !u!4 &92293530
 Transform:
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebd754fae69e444e81d52e1d900c386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _beginAt: Lovely
+  _beginAt: Start
   _resetRandomProcessionCountOnStart: 0
   _branchA: 0
   _branchB: 0
@@ -350,8 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26023549b150164499364090803cb52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowDownTime: 0.0001
-  _maxAbberation: 0
+  _slowDownTime: 10
+  _maxAbberation: 0.02
   _chrabb: {fileID: 2100000, guid: 3568022e911fdc94f986d41ec75da007, type: 2}
   _bar: {fileID: 1621402176}
   _fadeTime: 0

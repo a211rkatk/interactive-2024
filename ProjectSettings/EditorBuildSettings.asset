@@ -11,5 +11,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 923cbbabc0f400947b013c72ed2145d7
+  - enabled: 1
+    path: Assets/Scenes/lovely.unity
+    guid: a3e4c9d41eef73e40b5e2c5160dab171
+  - enabled: 1
+    path: Assets/Scenes/Windows.unity
+    guid: 2321acf4e03fc2f4a92b20afc0b36b74
+  - enabled: 1
+    path: Assets/Scenes/Window_no.unity
+    guid: 0505f0e70d3444f47958c17faa6791a4
+  - enabled: 1
+    path: Assets/Scenes/Startscene.unity
+    guid: 4257fc09efca94f4ea5e446b25264043
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e0a5f77697a44584698f95170a78d743, type: 2}
