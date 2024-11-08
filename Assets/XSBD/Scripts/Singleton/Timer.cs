@@ -21,6 +21,8 @@ public class Timer : MonoBehaviour
     [SerializeField] float _minimumSpeed;
     [SerializeField] float _autoTraverseThreshold;
 
+    [SerializeField] GameObject chrabbControl;
+
     public float remaining2;//µð¹ö±ë¿ë
 
     public static Timer _instance;
@@ -38,6 +40,8 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        chrabbControl = GameObject.Find("Chrabb");
+        chrabbControl.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -87,6 +91,7 @@ public class Timer : MonoBehaviour
         Debug.Log(_choice);
         if (_choice)
         {
+            chrabbControl.SetActive(true);
             //SetVideoSpeed(remaining);
             SetAbberation(remaining);
             SetBarFill(remaining);
