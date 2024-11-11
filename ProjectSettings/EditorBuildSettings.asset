@@ -26,5 +26,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/wasma_no.unity
     guid: 0954876839fb6fa48a7ac2f0b2db17be
+  - enabled: 1
+    path: Assets/Scenes/A_scene.unity
+    guid: dc4a504f041647d40a02e8febfa1cae2
+  - enabled: 1
+    path: Assets/Scenes/D_scene.unity
+    guid: ce93b7fc6eba9e543842ce80c106c3f4
+  - enabled: 1
+    path: Assets/Scenes/B_scene.unity
+    guid: 88d98776ea572bc4d9eb5d04b60a062d
+  - enabled: 1
+    path: Assets/Scenes/C_scene.unity
+    guid: be50705248430fd4aa8642e5d6d3e0c7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e0a5f77697a44584698f95170a78d743, type: 2}
